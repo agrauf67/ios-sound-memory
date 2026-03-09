@@ -1,0 +1,1140 @@
+{
+  "gameSets": [
+    {
+      "language": "de-DE",
+      "deckcard": {
+        "name": "Farben-Übersichtskarte.DE",
+        "image": "overview_game11_DE.jpg",
+        "text1": "FARBEN",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Blau.DE",
+          "text1": "BLAU",
+          "text2": ""
+        },
+        {
+          "name": "Braun.DE",
+          "text1": "BRAUN",
+          "text2": ""
+        },
+        {
+          "name": "Gelb.DE",
+          "text1": "GELB",
+          "text2": ""
+        },
+        {
+          "name": "Gold.DE",
+          "text1": "GOLD",
+          "text2": ""
+        },
+        {
+          "name": "Grün.DE",
+          "text1": "GRÜN",
+          "text2": ""
+        },
+        {
+          "name": "Lila.DE",
+          "text1": "LILA",
+          "text2": ""
+        },
+        {
+          "name": "Orange.DE",
+          "text1": "ORANGE",
+          "text2": ""
+        },
+        {
+          "name": "Rosa.DE",
+          "text1": "ROSA",
+          "text2": ""
+        },
+        {
+          "name": "Rot.DE",
+          "text1": "ROT",
+          "text2": ""
+        },
+        {
+          "name": "Silber.DE",
+          "text1": "SILBER",
+          "text2": ""
+        },
+        {
+          "name": "Weiss.DE",
+          "text1": "WEISS",
+          "text2": ""
+        },
+        {
+          "name": "Schwarz.DE",
+          "text1": "SCHWARZ",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "en-US",
+      "deckcard": {
+        "name": "Farben-Übersichtskarte.EN",
+        "image": "overview_game12_EN.jpg",
+        "text1": "COLORS",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Blau.EN",
+          "text1": "BLUE",
+          "text2": ""
+        },
+        {
+          "name": "Braun.EN",
+          "text1": "BROWN",
+          "text2": ""
+        },
+        {
+          "name": "Gelb.EN",
+          "text1": "YELLOW",
+          "text2": ""
+        },
+        {
+          "name": "Gold.EN",
+          "text1": "GOLD",
+          "text2": ""
+        },
+        {
+          "name": "Grün.EN",
+          "text1": "GREEN",
+          "text2": ""
+        },
+        {
+          "name": "Lila.EN",
+          "text1": "PURPLE",
+          "text2": ""
+        },
+        {
+          "name": "Orange.EN",
+          "text1": "ORANGE",
+          "text2": ""
+        },
+        {
+          "name": "Rosa.EN",
+          "text1": "PINK",
+          "text2": ""
+        },
+        {
+          "name": "Rot.EN",
+          "text1": "RED",
+          "text2": ""
+        },
+        {
+          "name": "Schwarz.EN",
+          "text1": "BLACK",
+          "text2": ""
+        },
+        {
+          "name": "Silber.EN",
+          "text1": "SILVER",
+          "text2": ""
+        },
+        {
+          "name": "Weiss.EN",
+          "text1": "WHITE",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "fr-FR",
+      "deckcard": {
+        "name": "Farben-Übersichtskarte.FR",
+        "image": "overview_game13_FR.jpg",
+        "text1": "COULEURS",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Blau.FR",
+          "text1": "BLEU",
+          "text2": ""
+        },
+        {
+          "name": "Braun.FR",
+          "text1": "BRUN",
+          "text2": ""
+        },
+        {
+          "name": "Gelb.FR",
+          "text1": "JAUNE",
+          "text2": ""
+        },
+        {
+          "name": "Gold.FR",
+          "text1": "OR",
+          "text2": ""
+        },
+        {
+          "name": "Grün.FR",
+          "text1": "VERT",
+          "text2": ""
+        },
+        {
+          "name": "Lila.Fr",
+          "text1": "VIOLET",
+          "text2": ""
+        },
+        {
+          "name": "Orange.FR",
+          "text1": "ORANGE",
+          "text2": ""
+        },
+        {
+          "name": "Rosa.FR",
+          "text1": "ROSE",
+          "text2": ""
+        },
+        {
+          "name": "Rot.FR",
+          "text1": "ROUGE",
+          "text2": ""
+        },
+        {
+          "name": "Schwarz.FR",
+          "text1": "NOIR",
+          "text2": ""
+        },
+        {
+          "name": "Silber.FR",
+          "text1": "ARGENT",
+          "text2": ""
+        },
+        {
+          "name": "Weiss.FR",
+          "text1": "BLANC",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "es-ES",
+      "deckcard": {
+        "name": "Farben-Übersichtskarte.SP",
+        "image": "overview_game14_SP.jpg",
+        "text1": "BANDERA",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Blau.SP",
+          "text1": "AZUL",
+          "text2": ""
+        },
+        {
+          "name": "Braun.SP",
+          "text1": "MARRÓN",
+          "text2": ""
+        },
+        {
+          "name": "Gelb.SP",
+          "text1": "AMARILLO",
+          "text2": ""
+        },
+        {
+          "name": "Gold.SP",
+          "text1": "ORO",
+          "text2": ""
+        },
+        {
+          "name": "Grün.SP",
+          "text1": "VERDE",
+          "text2": ""
+        },
+        {
+          "name": "Lila.SP",
+          "text1": "PÚRPURA",
+          "text2": ""
+        },
+        {
+          "name": "Orange.SP",
+          "text1": "NARANJA",
+          "text2": ""
+        },
+        {
+          "name": "Rosa.SP",
+          "text1": "ROSA",
+          "text2": ""
+        },
+        {
+          "name": "Rot.SP",
+          "text1": "ROJO",
+          "text2": ""
+        },
+        {
+          "name": "Schwarz.SP",
+          "text1": "NEGRO",
+          "text2": ""
+        },
+        {
+          "name": "Silber.SP",
+          "text1": "PLATA",
+          "text2": ""
+        },
+        {
+          "name": "Weiss.SP",
+          "text1": "BLANCO",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "de-DE",
+      "deckcard": {
+        "name": "Flaggen-Übersichtskarte.DE",
+        "image": "overview_game21_DE.jpg",
+        "text1": "FLAGGEN",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Flaggen-Dänemark.DE",
+          "text1": "KÖNIGREICH DÄNEMARK",
+          "text2": "DÄNEMARK"
+        },
+        {
+          "name": "Flaggen-England.DE",
+          "text1": "TEIL DES VEREINIGTEN KÖNIGREICHS ENGLAND",
+          "text2": "ENGLAND"
+        },
+        {
+          "name": "Flaggen-Frankreich.DE",
+          "text1": "FRANZÖSISCHE REPUBLIK",
+          "text2": "FRANKREICH"
+        },
+        {
+          "name": "Flaggen-Griechenland.DE",
+          "text1": "HELLENISCHE REPUBLIK",
+          "text2": "GRIECHENLAND"
+        },
+        {
+          "name": "Flaggen-Italien.DE",
+          "text1": "ITALIENISCHE REPUBLIK",
+          "text2": "ITALIEN"
+        },
+        {
+          "name": "Flaggen-Niederlande.DE",
+          "text1": "KÖNIGREICH DER NIEDERLANDE",
+          "text2": "NIEDERLANDE"
+        },
+        {
+          "name": "Flaggen-Polen.DE",
+          "text1": "REPUBLIK POLEN",
+          "text2": "POLEN"
+        },
+        {
+          "name": "Flaggen-Portugal.DE",
+          "text1": "PORTUGIESISCHE REPUBLIK",
+          "text2": "PORTUGAL"
+        },
+        {
+          "name": "Flaggen-Schweden.DE",
+          "text1": "KÖNIGREICH SCHWEDEN",
+          "text2": "SCHWEDEN"
+        },
+        {
+          "name": "Flaggen-Spanien.DE",
+          "text1": "KÖNIGREICH SPANIEN",
+          "text2": "SPANIEN"
+        },
+        {
+          "name": "Flaggen-Tschechien.DE",
+          "text1": "TSCHECHISCHE REPUBLIK",
+          "text2": "TSCHECHIEN"
+        },
+        {
+          "name": "Flaggen-Türkei.DE",
+          "text1": "REPUBLIK TÜRKIYE",
+          "text2": "TÜRKEI"
+        }
+      ]
+    },
+    {
+      "language": "en-US",
+      "deckcard": {
+        "name": "Flaggen-Übersichtskarte.EN",
+        "image": "overview_game22_EN.jpg",
+        "text1": "FLAGS",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Flaggen-Dänemark.EN",
+          "text1": "KINGDOM OF DENMARK",
+          "text2": "DENMARK"
+        },
+        {
+          "name": "Flaggen-England.EN",
+          "text1": "PART OF THE UNITED KINGDOM OF ENGLAND",
+          "text2": "ENGLAND"
+        },
+        {
+          "name": "Flaggen-Frankreich.EN",
+          "text1": "FRENCH REPUBLIC",
+          "text2": "FRANCE"
+        },
+        {
+          "name": "Flaggen-Griechenland.EN",
+          "text1": "HELLENIC REPUBLIC",
+          "text2": "GREECE"
+        },
+        {
+          "name": "Flaggen-Italien.EN",
+          "text1": "ITALIAN REPUBLIC",
+          "text2": "ITALY"
+        },
+        {
+          "name": "Flaggen-Niederlande.EN",
+          "text1": "KINGDOM OF THE NETHERLANDS",
+          "text2": "NETHERLANDS"
+        },
+        {
+          "name": "Flaggen-Polen.EN",
+          "text1": "REPUBLIC OF POLAND",
+          "text2": "POLAND"
+        },
+        {
+          "name": "Flaggen-Portugal.EN",
+          "text1": "PORTUGUESE REPUBLIC",
+          "text2": "PORTUGAL"
+        },
+        {
+          "name": "Flaggen-Schweden.EN",
+          "text1": "KINGDOM OF SWEDEN",
+          "text2": "SWEDEN"
+        },
+        {
+          "name": "Flaggen-Spanien.EN",
+          "text1": "KINGDOM OF SPAIN",
+          "text2": "SPAIN"
+        },
+        {
+          "name": "Flaggen-Tschechien.EN",
+          "text1": "CZECH REPUBLIC",
+          "text2": "CZECH REPUBLIC"
+        },
+        {
+          "name": "Flaggen-Türkei.EN",
+          "text1": "REPUBLIC OF TURKEY",
+          "text2": "TÜRKIYE"
+        }
+      ]
+    },
+    {
+      "language": "fr-FR",
+      "deckcard": {
+        "name": "Flaggen-Übersichtskarte.FR",
+        "image": "overview_game23_FR.jpg",
+        "text1": "DRAPEAUX",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Flaggen-Dänemark.FR",
+          "text1": "ROYAUME DU DANEMARK",
+          "text2": "DANEMARK"
+        },
+        {
+          "name": "Flaggen-England.FR",
+          "text1": "PARTIE DU ROYAUME-UNI D'ANGLETERRE",
+          "text2": "ANGLETERRE"
+        },
+        {
+          "name": "Flaggen-Frankreich.FR",
+          "text1": "RÉPUBLIQUE FRANÇAISE",
+          "text2": "FRANCE"
+        },
+        {
+          "name": "Flaggen-Griechenland.FR",
+          "text1": "RÉPUBLIQUE HELLÉNIQUE",
+          "text2": "GRÈCE"
+        },
+        {
+          "name": "Flaggen-Italien.FR",
+          "text1": "RÉPUBLIQUE ITALIENNE",
+          "text2": "ITALIE"
+        },
+        {
+          "name": "Flaggen-Niederlande.FR",
+          "text1": "ROYAUME DES PAYS-BAS",
+          "text2": "PAYS-BAS"
+        },
+        {
+          "name": "Flaggen-Polen.FR",
+          "text1": "RÉPUBLIQUE DE POLOGNE",
+          "text2": "POLOGNE"
+        },
+        {
+          "name": "Flaggen-Portugal.FR",
+          "text1": "RÉPUBLIQUE PORTUGAISE",
+          "text2": "PORTUGAL"
+        },
+        {
+          "name": "Flaggen-Schweden.FR",
+          "text1": "ROYAUME DE SUÈDE",
+          "text2": "SUÈDE"
+        },
+        {
+          "name": "Flaggen-Frankreich.FR",
+          "text1": "ROYAUME D'ESPAGNE",
+          "text2": "ESPAGNE"
+        },
+        {
+          "name": "Flaggen-Tschechien.FR",
+          "text1": "RÉPUBLIQUE TCHÈQUE",
+          "text2": "RÉPUBLIQUE TCHÈQUE"
+        },
+        {
+          "name": "Flaggen-Türkei.FR",
+          "text1": "RÉPUBLIQUE DE TURQUIE",
+          "text2": "TURQUIE"
+        }
+      ]
+    },
+    {
+      "language": "es-ES",
+      "deckcard": {
+        "name": "Flaggen-Übersichtskarte.SP",
+        "image": "overview_game24_SP.jpg",
+        "text1": "BANDERAS",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Flaggen-Dänemark.SP",
+          "text1": "REINO DE DINAMARCA",
+          "text2": "DINAMARCA"
+        },
+        {
+          "name": "Flaggen-England.SP",
+          "text1": "PARTE DEL REINO UNIDO DE INGLATERRA",
+          "text2": "INGLATERRA"
+        },
+        {
+          "name": "Flaggen-Frankreich.SP",
+          "text1": "REPÚBLICA FRANCESA",
+          "text2": "FRANCIA"
+        },
+        {
+          "name": "Flaggen-Griechenland.SP",
+          "text1": "REPÚBLICA HELÉNICA",
+          "text2": "GRECIA"
+        },
+        {
+          "name": "Flaggen-Italien.SP",
+          "text1": "REPÚBLICA ITALIANA",
+          "text2": "ITALIA"
+        },
+        {
+          "name": "Flaggen-Niederlande.SP",
+          "text1": "REINO DE LOS PAÍSES BAJOS",
+          "text2": "PAÍSES BAJOS"
+        },
+        {
+          "name": "Flaggen-Polen.SP",
+          "text1": "REPÚBLICA DE POLONIA",
+          "text2": "POLONIA"
+        },
+        {
+          "name": "Flaggen-Portugal.SP",
+          "text1": "REPÚBLICA PORTUGUESA",
+          "text2": "PORTUGAL"
+        },
+        {
+          "name": "Flaggen-Schweden.SP",
+          "text1": "REINO DE SUECIA",
+          "text2": "SUECIA"
+        },
+        {
+          "name": "Flaggen-Spanien.SP",
+          "text1": "REINO DE ESPAÑA",
+          "text2": "ESPAÑA"
+        },
+        {
+          "name": "Flaggen-Tschechien.SP",
+          "text1": "REPÚBLICA CHECA",
+          "text2": "REPÚBLICA CHECA"
+        },
+        {
+          "name": "Flaggen-Türkei.SP",
+          "text1": "REPÚBLICA DE TURQUÍA",
+          "text2": "TURQUIA"
+        }
+      ]
+    },
+    {
+      "language": "de-DE",
+      "deckcard": {
+        "name": "Kleidung-Übersichtskarte.DE",
+        "image": "overview_game31_DE.jpg",
+        "text1": "KLEIDUNG",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Abendkleid.DE",
+          "text1": "ABENDKLEID",
+          "text2": ""
+        },
+        {
+          "name": "Badehose.DE",
+          "text1": "BADEHOSE",
+          "text2": ""
+        },
+        {
+          "name": "BH.DE",
+          "text1": "BH",
+          "text2": ""
+        },
+        {
+          "name": "Bustier.DE",
+          "text1": "BUSTIER",
+          "text2": ""
+        },
+        {
+          "name": "Fliege.DE",
+          "text1": "FLIEGE",
+          "text2": ""
+        },
+        {
+          "name": "Hotpants.DE",
+          "text1": "HOTPANTS",
+          "text2": ""
+        },
+        {
+          "name": "Langarmshirt.DE",
+          "text1": "LANGARMSHIRT",
+          "text2": ""
+        },
+        {
+          "name": "Mütze.DE",
+          "text1": "MÜTZE",
+          "text2": ""
+        },
+        {
+          "name": "Regenjacke.DE",
+          "text1": "REGENJACKE",
+          "text2": ""
+        },
+        {
+          "name": "Strickjacke.DE",
+          "text1": "STRICKJACKE",
+          "text2": ""
+        },
+        {
+          "name": "T-Shirt.DE",
+          "text1": "T-SHIRT",
+          "text2": ""
+        },
+        {
+          "name": "Wintermantel.DE",
+          "text1": "WINTERMANTEL",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "en-US",
+      "deckcard": {
+        "name": "Kleidung-Übersichtskarte.EN",
+        "image": "overview_game32_EN.jpg",
+        "text1": "CLOTHING",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Abendkleid.EN",
+          "text1": "EVENING DRESS",
+          "text2": ""
+        },
+        {
+          "name": "Badehose.EN",
+          "text1": "BATHING TRUNKS",
+          "text2": ""
+        },
+        {
+          "name": "BH.EN",
+          "text1": "BRA",
+          "text2": ""
+        },
+        {
+          "name": "Bustier.EN",
+          "text1": "BUSTIER",
+          "text2": ""
+        },
+        {
+          "name": "Fliege.EN",
+          "text1": "BOW TIE",
+          "text2": ""
+        },
+        {
+          "name": "Hotpants.EN",
+          "text1": "HOTPANTS",
+          "text2": ""
+        },
+        {
+          "name": "Langarmshirt.EN",
+          "text1": "LONG SLEEVE SHIRT",
+          "text2": ""
+        },
+        {
+          "name": "Mütze.EN",
+          "text1": "WINTER HAT",
+          "text2": ""
+        },
+        {
+          "name": "Regenjacke.EN",
+          "text1": "RAIN JACKET",
+          "text2": ""
+        },
+        {
+          "name": "Strickjacke.EN",
+          "text1": "KNITTED JACKET",
+          "text2": ""
+        },
+        {
+          "name": "T-Shirt.EN",
+          "text1": "T-SHIRT",
+          "text2": ""
+        },
+        {
+          "name": "Wintermantel.EN",
+          "text1": "WINTER COAT",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "fr-FR",
+      "deckcard": {
+        "name": "Kleidung-Übersichtskarte.FR",
+        "image": "overview_game33_FR.jpg",
+        "text1": "VÊTEMENTS",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Abendkleid.FR",
+          "text1": "TENUE DE SOIRÉE",
+          "text2": ""
+        },
+        {
+          "name": "Badehose.FR",
+          "text1": "MAILLOTS DE BAIN",
+          "text2": ""
+        },
+        {
+          "name": "BH.FR",
+          "text1": "SOUTIEN-GORGE",
+          "text2": ""
+        },
+        {
+          "name": "Bustier.FR",
+          "text1": "BUSTIER",
+          "text2": ""
+        },
+        {
+          "name": "Fliege.FR",
+          "text1": "NŒUD PAPILLON",
+          "text2": ""
+        },
+        {
+          "name": "Hotpants.FR",
+          "text1": "PANTALONS",
+          "text2": ""
+        },
+        {
+          "name": "Langarmshirt.FR",
+          "text1": "CHEMISE À MANCHES LONGUES",
+          "text2": ""
+        },
+        {
+          "name": "Mütze.FR",
+          "text1": "CAPUCHON",
+          "text2": ""
+        },
+        {
+          "name": "Regenjacke.FR",
+          "text1": "VESTE DE PLUIE",
+          "text2": ""
+        },
+        {
+          "name": "Strickjacke.FR",
+          "text1": "VESTE EN TRICOT",
+          "text2": ""
+        },
+        {
+          "name": "T-Shirt.FR",
+          "text1": "T-SHIRT",
+          "text2": ""
+        },
+        {
+          "name": "Wintermantel.Fr",
+          "text1": "MANTEAU D'HIVER",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "es-ES",
+      "deckcard": {
+        "name": "KLEIDUNG-Übersichtskarte.SP",
+        "image": "overview_game34_SP.jpg",
+        "text1": "ROPA",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Abendkleid.SP",
+          "text1": "VESTIDO DE NOCHE",
+          "text2": ""
+        },
+        {
+          "name": "Badehose.SP",
+          "text1": "BAÑADOR",
+          "text2": ""
+        },
+        {
+          "name": "BH.SP",
+          "text1": "SOSTÉN",
+          "text2": ""
+        },
+        {
+          "name": "Bustier.SP",
+          "text1": "BUSTIERO",
+          "text2": ""
+        },
+        {
+          "name": "Fliege.SP",
+          "text1": "PAJARITA",
+          "text2": ""
+        },
+        {
+          "name": "Hotpants.SP",
+          "text1": "PANTALONES CORTOS",
+          "text2": ""
+        },
+        {
+          "name": "Langarmshirt.SP",
+          "text1": "CAMISA DE MANGA LARGA",
+          "text2": ""
+        },
+        {
+          "name": "Mütze.SP",
+          "text1": "TAPA",
+          "text2": ""
+        },
+        {
+          "name": "Regenjacke.SP",
+          "text1": "CHAQUETA IMPERMEABLE",
+          "text2": ""
+        },
+        {
+          "name": "Strickjacke.SP",
+          "text1": "CHAQUETA DE PUNTO",
+          "text2": ""
+        },
+        {
+          "name": "T-Shirt.SP",
+          "text1": "CAMISETA",
+          "text2": ""
+        },
+        {
+          "name": "Wintermantel.SP",
+          "text1": "ABRIGO DE INVIERNO",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "de-DE",
+      "deckcard": {
+        "name": "",
+        "image": "overview_game41_DE.jpg",
+        "text1": "OBST",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Ananas.DE",
+          "text1": "ANANAS",
+          "text2": ""
+        },
+        {
+          "name": "Avocado.DE",
+          "text1": "AVOCADO",
+          "text2": ""
+        },
+        {
+          "name": "Birne.DE",
+          "text1": "BIRNE",
+          "text2": ""
+        },
+        {
+          "name": "Dattel.DE",
+          "text1": "DATTEL",
+          "text2": ""
+        },
+        {
+          "name": "Feige.DE",
+          "text1": "FEIGE",
+          "text2": ""
+        },
+        {
+          "name": "Granatapfel.DE",
+          "text1": "GRANATAPFEL",
+          "text2": ""
+        },
+        {
+          "name": "Heidelbeere.DE",
+          "text1": "HEIDELBEERE",
+          "text2": ""
+        },
+        {
+          "name": "Johannisbeere.DE",
+          "text1": "JOHANNISBEERE",
+          "text2": ""
+        },
+        {
+          "name": "Kiwi.DE",
+          "text1": "KIWI",
+          "text2": ""
+        },
+        {
+          "name": "Mandarine.DE",
+          "text1": "MANDARINE",
+          "text2": ""
+        },
+        {
+          "name": "Passionsfrucht.DE",
+          "text1": "PASSIONSFRUCHT",
+          "text2": ""
+        },
+        {
+          "name": "Pomelo.DE",
+          "text1": "POMELO",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "en-US",
+      "deckcard": {
+        "name": "",
+        "image": "overview_game42_EN.jpg",
+        "text1": "FRUIT",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Ananas.EN",
+          "text1": "PINEAPPLE",
+          "text2": ""
+        },
+        {
+          "name": "Avocado.EN",
+          "text1": "AVOCADO",
+          "text2": ""
+        },
+        {
+          "name": "Birne.EN",
+          "text1": "PEAR",
+          "text2": ""
+        },
+        {
+          "name": "Dattel.EN",
+          "text1": "DATE",
+          "text2": ""
+        },
+        {
+          "name": "Feige.EN",
+          "text1": "COWARDLY",
+          "text2": ""
+        },
+        {
+          "name": "Granatapfel.EN",
+          "text1": "POMEGRANATE",
+          "text2": ""
+        },
+        {
+          "name": "Heidelbeere.EN",
+          "text1": "BLUEBERRY",
+          "text2": ""
+        },
+        {
+          "name": "Johannisbeere.EN",
+          "text1": "CURRANT",
+          "text2": ""
+        },
+        {
+          "name": "Kiwi.EN",
+          "text1": "KIWI",
+          "text2": ""
+        },
+        {
+          "name": "Mandarine.EN",
+          "text1": "MANDARIN",
+          "text2": ""
+        },
+        {
+          "name": "Passionsfrucht.EN",
+          "text1": "PASSION FRUIT",
+          "text2": ""
+        },
+        {
+          "name": "Pomelo.EN",
+          "text1": "POMELO",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "fr-FR",
+      "deckcard": {
+        "name": "",
+        "image": "overview_game43_FR.jpg",
+        "text1": "FRUIT",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Ananas.FR",
+          "text1": "ANANAS",
+          "text2": ""
+        },
+        {
+          "name": "Avocado.FR",
+          "text1": "AVOCAT",
+          "text2": ""
+        },
+        {
+          "name": "Birne.FR",
+          "text1": "POIRE",
+          "text2": ""
+        },
+        {
+          "name": "Dattel.FR",
+          "text1": "DATE",
+          "text2": ""
+        },
+        {
+          "name": "Feige.FR",
+          "text1": "LÂCHE",
+          "text2": ""
+        },
+        {
+          "name": "Granatapfel.FR",
+          "text1": "GRENADE",
+          "text2": ""
+        },
+        {
+          "name": "Heidelbeere.FR",
+          "text1": "MYRTILLE",
+          "text2": ""
+        },
+        {
+          "name": "Johannisbeere.FR",
+          "text1": "GROSEILLE",
+          "text2": ""
+        },
+        {
+          "name": "Kiwi.FR",
+          "text1": "KIWI",
+          "text2": ""
+        },
+        {
+          "name": "Mandarine.FR",
+          "text1": "MANDARIN",
+          "text2": ""
+        },
+        {
+          "name": "Passionsfrucht.FR",
+          "text1": "FRUIT DE LA PASSION",
+          "text2": ""
+        },
+        {
+          "name": "Pomelo.Fr",
+          "text1": "POMÉLO",
+          "text2": ""
+        }
+      ]
+    },
+    {
+      "language": "es-ES",
+      "deckcard": {
+        "name": "",
+        "image": "overview_game44_SP.jpg",
+        "text1": "FRUTA",
+        "text2": ""
+      },
+      "cards": [
+        {
+          "name": "Ananas.SP",
+          "text1": "PIÑA",
+          "text2": ""
+        },
+        {
+          "name": "Avocado.SP",
+          "text1": "PALTA",
+          "text2": ""
+        },
+        {
+          "name": "Birne.SP",
+          "text1": "PERA",
+          "text2": ""
+        },
+        {
+          "name": "Dattel.SP",
+          "text1": "FECHA",
+          "text2": ""
+        },
+        {
+          "name": "Feige.SP",
+          "text1": "COBARDEMENTE",
+          "text2": ""
+        },
+        {
+          "name": "Granatapfel.SP",
+          "text1": "GRANADA",
+          "text2": ""
+        },
+        {
+          "name": "Heidelbeere.SP",
+          "text1": "ARÁNDANO",
+          "text2": ""
+        },
+        {
+          "name": "Johannisbeere.SP",
+          "text1": "GROSELLA",
+          "text2": ""
+        },
+        {
+          "name": "Kiwi.SP",
+          "text1": "KIWI",
+          "text2": ""
+        },
+        {
+          "name": "Mandarine.SP",
+          "text1": "MANDARÍN",
+          "text2": ""
+        },
+        {
+          "name": "Passionsfrucht.SP",
+          "text1": "GRANADILLA",
+          "text2": ""
+        },
+        {
+          "name": "Pomelo.SP",
+          "text1": "POMELO",
+          "text2": ""
+        }
+      ]
+    }
+  ]
+}
