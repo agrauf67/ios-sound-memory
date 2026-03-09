@@ -2,19 +2,31 @@ import SwiftUI
 
 struct PlayScreen: View {
     let viewModel: SoundMemoryViewModel
+    @State private var showCompleteOverlay = false
 
     var body: some View {
-        Group {
-            if viewModel.selectedGameIndex < 0 || viewModel.cards.isEmpty {
-                ContentUnavailableView(
-                    "Select a Game",
-                    systemImage: "square.grid.3x3",
-                    description: Text("Please select a game under \"Games\"")
-                )
-            } else {
-                GameBoardView(viewModel: viewModel)
+        ZStack {
+            Group {
+                if viewModel.selectedGameIndex < 0 || viewModel.cards.isEmpty {
+                    ContentUnavailableView(
+                        "Select a Game",
+                        systemImage: "square.grid.3x3",
+                        description: Text("Please select a game under \"Games\"")
+                    )
+                } else {
+                    GameBoardView(viewModel: viewModel)
+                }
+            }
+
+            if showCompleteOverlay {
+                GameCompleteOverlay(moves: viewModel.moves) {
+                    showCompleteOverlay = false
+                    viewModel.resetGame()
+                }
+                .transition(.opacity)
             }
         }
+        .animation(.easeInOut(duration: 0.3), value: showCompleteOverlay)
         .navigationTitle("Sound Memory")
         .toolbar {
             if viewModel.selectedGameIndex >= 0 && !viewModel.cards.isEmpty {
@@ -29,11 +41,64 @@ struct PlayScreen: View {
         }
         .onChange(of: viewModel.isGameComplete) { _, complete in
             if complete {
-                Task {
-                    try? await Task.sleep(for: .seconds(viewModel.settings.gameCompleteSeconds))
-                    viewModel.resetGame()
-                }
+                showCompleteOverlay = true
             }
+        }
+    }
+}
+
+private struct GameCompleteOverlay: View {
+    let moves: Int
+    let onDismiss: () -> Void
+
+    private var message: String {
+        switch moves {
+        case ...14: return "Perfect!"
+        case 15...18: return "Excellent!"
+        case 19...24: return "Well Done!"
+        case 25...32: return "Good Job!"
+        default: return "Game Complete!"
+        }
+    }
+
+    private var icon: String {
+        switch moves {
+        case ...14: return "star.fill"
+        case 15...18: return "star.fill"
+        case 19...24: return "hand.thumbsup.fill"
+        case 25...32: return "checkmark.circle.fill"
+        default: return "flag.checkered"
+        }
+    }
+
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.5)
+                .ignoresSafeArea()
+                .onTapGesture { onDismiss() }
+
+            VStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.system(size: 48))
+                    .foregroundStyle(.yellow)
+
+                Text(message)
+                    .font(.largeTitle.bold())
+
+                Text("\(moves) moves")
+                    .font(.title2)
+                    .foregroundStyle(.secondary)
+
+                Button("Play Again") {
+                    onDismiss()
+                }
+                .buttonStyle(.borderedProminent)
+                .controlSize(.large)
+                .padding(.top, 8)
+            }
+            .padding(32)
+            .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+            .padding(40)
         }
     }
 }
@@ -125,18 +190,21 @@ private struct MemoryCardView: View {
                             .foregroundStyle(.secondary)
                     }
                 } else {
-                    // Front side
-                    if showCardImage, let cardImage {
-                        Image(uiImage: cardImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
+                    // Front side — counter-rotate to undo parent's Y-axis flip
+                    Group {
+                        if showCardImage, let cardImage {
+                            Image(uiImage: cardImage)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
 
-                    if isSpeaking {
-                        Image(systemName: "speaker.wave.2.fill")
-                            .font(.title2)
-                            .foregroundStyle(.tint)
+                        if isSpeaking {
+                            Image(systemName: "speaker.wave.2.fill")
+                                .font(.title2)
+                                .foregroundStyle(.tint)
+                        }
                     }
+                    .scaleEffect(x: -1, y: 1)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -154,7 +222,7 @@ private struct MemoryCardView: View {
             perspective: 0.3
         )
         .animation(.easeInOut(duration: 0.4), value: isShowingFront)
-        .task {
+        .task(id: card.imageFileName) {
             cardImage = loadGameImage(named: card.imageFileName)
         }
     }

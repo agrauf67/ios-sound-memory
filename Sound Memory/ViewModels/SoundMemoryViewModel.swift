@@ -119,21 +119,21 @@ class SoundMemoryViewModel {
             let capturedFirstId = firstId
 
             if isMatch {
+                for i in cards.indices {
+                    if cards[i].id == capturedFirstId || cards[i].id == cardId {
+                        cards[i].isMatched = true
+                    }
+                }
+                matchesFound += 1
+                if matchesFound == 12 {
+                    isGameComplete = true
+                    saveGameResult()
+                }
                 pendingFlipTask = Task {
                     try? await Task.sleep(nanoseconds: displayDelay)
                     guard !Task.isCancelled else { return }
                     speakingCardIds = []
-                    for i in cards.indices {
-                        if cards[i].id == capturedFirstId || cards[i].id == cardId {
-                            cards[i].isMatched = true
-                        }
-                    }
                     flippedCardLabels = [:]
-                    matchesFound += 1
-                    if matchesFound == 12 {
-                        isGameComplete = true
-                        saveGameResult()
-                    }
                 }
             } else {
                 pendingFlipBackIds = (capturedFirstId, cardId)

@@ -143,7 +143,7 @@ struct StarRatingView: View {
             ForEach(0..<3, id: \.self) { i in
                 Image(systemName: i < stars ? "star.fill" : "star")
                     .font(.system(size: size))
-                    .foregroundStyle(i < stars ? .tint : .secondary)
+                    .foregroundStyle(i < stars ? AnyShapeStyle(.tint) : AnyShapeStyle(.secondary))
             }
         }
     }

@@ -1,25 +1,25 @@
 import UIKit
 
-struct CardInfo: Codable, Sendable {
+nonisolated struct CardInfo: Codable, Sendable {
     let name: String
     let text1: String
     let text2: String
 }
 
-struct DeckCard: Codable, Sendable {
+nonisolated struct DeckCard: Codable, Sendable {
     let name: String
     let image: String
     let text1: String
     let text2: String
 }
 
-struct GameSetJSON: Codable, Sendable {
+nonisolated struct GameSetJSON: Codable, Sendable {
     let language: String
     let deckcard: DeckCard
     let cards: [CardInfo]
 }
 
-struct GameSetsRoot: Codable, Sendable {
+nonisolated struct GameSetsRoot: Codable, Sendable {
     let gameSets: [GameSetJSON]
 }
 
