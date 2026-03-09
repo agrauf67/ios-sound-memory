@@ -51,7 +51,7 @@ private struct GameCompleteOverlay: View {
     let moves: Int
     let onDismiss: () -> Void
 
-    private var message: String {
+    private var message: LocalizedStringKey {
         switch moves {
         case ...14: return "Perfect!"
         case 15...18: return "Excellent!"

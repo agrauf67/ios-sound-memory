@@ -9,6 +9,11 @@ struct ContentView: View {
     @State private var showHelp = false
     @State private var showAbout = false
 
+    private var appLocale: Locale {
+        let lang = viewModel.settings.language.components(separatedBy: "-").first ?? "en"
+        return Locale(identifier: lang)
+    }
+
     var body: some View {
         TabView(selection: $selectedTab) {
             Tab("Games", systemImage: "square.grid.3x3", value: 0) {
@@ -49,10 +54,12 @@ struct ContentView: View {
         }
         .tint(viewModel.settings.accentColor)
         .preferredColorScheme(viewModel.settings.preferredColorScheme)
+        .environment(\.locale, appLocale)
         .fullScreenCover(isPresented: $showWalkthrough) {
             WalkthroughScreen(viewModel: viewModel) {
                 showWalkthrough = false
             }
+            .environment(\.locale, appLocale)
         }
         .sheet(isPresented: $showSettings) {
             NavigationStack {
@@ -62,18 +69,22 @@ struct ContentView: View {
             }
             .tint(viewModel.settings.accentColor)
             .preferredColorScheme(viewModel.settings.preferredColorScheme)
+            .environment(\.locale, appLocale)
         }
         .sheet(isPresented: $showHowToPlay) {
             NavigationStack { HowToPlayScreen() }
                 .tint(viewModel.settings.accentColor)
+                .environment(\.locale, appLocale)
         }
         .sheet(isPresented: $showHelp) {
             NavigationStack { HelpScreen() }
                 .tint(viewModel.settings.accentColor)
+                .environment(\.locale, appLocale)
         }
         .sheet(isPresented: $showAbout) {
             NavigationStack { AboutScreen() }
                 .tint(viewModel.settings.accentColor)
+                .environment(\.locale, appLocale)
         }
         .onAppear {
             if !viewModel.settings.walkthroughCompleted {

@@ -61,7 +61,7 @@ struct AboutScreen: View {
 }
 
 private struct InfoRow: View {
-    let label: String
+    let label: LocalizedStringKey
     let value: String
 
     var body: some View {
@@ -76,7 +76,7 @@ private struct InfoRow: View {
 }
 
 private struct LinkButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let urlString: String
 
     var body: some View {

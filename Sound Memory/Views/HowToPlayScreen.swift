@@ -52,7 +52,7 @@ struct HowToPlayScreen: View {
 }
 
 private struct SectionHeader: View {
-    let title: String
+    let title: LocalizedStringKey
     var body: some View {
         Text(title)
             .font(.title3)
@@ -63,8 +63,8 @@ private struct SectionHeader: View {
 
 private struct StepItemView: View {
     let icon: String
-    let title: String
-    let description: String
+    let title: LocalizedStringKey
+    let description: LocalizedStringKey
 
     var body: some View {
         HStack(alignment: .top, spacing: 12) {

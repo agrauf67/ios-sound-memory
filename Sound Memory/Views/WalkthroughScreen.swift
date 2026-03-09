@@ -115,12 +115,12 @@ private struct WalkthroughPageView: View {
                     .font(.system(size: 80))
                     .foregroundStyle(.tint)
 
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.title)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
 
-                Text(description)
+                Text(LocalizedStringKey(description))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
 
@@ -131,7 +131,7 @@ private struct WalkthroughPageView: View {
                                 .font(.caption)
                                 .foregroundStyle(.tint)
                                 .padding(.top, 2)
-                            Text(tip)
+                            Text(LocalizedStringKey(tip))
                                 .foregroundStyle(.secondary)
                                 .multilineTextAlignment(.center)
                         }

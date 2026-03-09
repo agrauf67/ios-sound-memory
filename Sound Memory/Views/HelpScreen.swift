@@ -111,7 +111,7 @@ private struct FaqItemView: View {
                 }
             } label: {
                 HStack {
-                    Text(question)
+                    Text(LocalizedStringKey(question))
                         .fontWeight(.medium)
                         .multilineTextAlignment(.leading)
                     Spacer()
@@ -124,7 +124,7 @@ private struct FaqItemView: View {
             .buttonStyle(.plain)
 
             if isExpanded {
-                Text(answer)
+                Text(LocalizedStringKey(answer))
                     .foregroundStyle(.secondary)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 10)
