@@ -52,12 +52,19 @@ All source files live under `Sound Memory/`. The project uses Xcode's file syste
 - `gamesets.json` — 16 game sets (4 categories × 4 languages: de-DE, en-US, fr-FR, es-ES)
 - `GameImages/` — 226 JPG card images and deck overview images, loaded via `Bundle.main.path(forResource:ofType:inDirectory:)`
 
+### Localization
+
+- UI strings: `Localizable.xcstrings` (source language: English, translated to German, French, Spanish)
+- Game content (card labels/speech): localized in `gamesets.json` per language variant (de-DE, en-US, fr-FR, es-ES)
+- The app's display locale is derived from `SettingsManager.language` (not the system locale)
+
 ### Key Patterns
 
 - All `@Observable` classes use `didSet` on properties to persist to UserDefaults
 - TTS delegate methods are `nonisolated` and dispatch back to `@MainActor` via `Task`
 - Card flip uses delayed `Task.sleep` for display timing and flip-back logic
 - Game complete auto-resets after configurable delay
+- `ContentView` manages all sheet presentation state and passes `SoundMemoryViewModel` down to child views
 
 ## Swift Concurrency
 
