@@ -17,6 +17,9 @@ class SettingsManager {
     var useOfficialText: Bool {
         didSet { UserDefaults.standard.set(useOfficialText, forKey: "useOfficialText") }
     }
+    var voiceGender: String {
+        didSet { UserDefaults.standard.set(voiceGender, forKey: "voiceGender") }
+    }
     var themeMode: String {
         didSet { UserDefaults.standard.set(themeMode, forKey: "themeMode") }
     }
@@ -56,6 +59,7 @@ class SettingsManager {
             "cardDisplaySeconds": 1,
             "gameCompleteSeconds": 3,
             "useOfficialText": false,
+            "voiceGender": "female",
             "themeMode": "system",
             "colorTheme": "blue",
             "walkthroughCompleted": false
@@ -65,6 +69,7 @@ class SettingsManager {
         cardDisplaySeconds = ud.integer(forKey: "cardDisplaySeconds")
         gameCompleteSeconds = ud.integer(forKey: "gameCompleteSeconds")
         useOfficialText = ud.bool(forKey: "useOfficialText")
+        voiceGender = ud.string(forKey: "voiceGender") ?? "female"
         themeMode = ud.string(forKey: "themeMode") ?? "system"
         colorTheme = ud.string(forKey: "colorTheme") ?? "blue"
         walkthroughCompleted = ud.bool(forKey: "walkthroughCompleted")

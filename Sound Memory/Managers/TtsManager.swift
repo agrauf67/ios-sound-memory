@@ -11,12 +11,33 @@ class TtsManager: NSObject, AVSpeechSynthesizerDelegate {
         try? AVAudioSession.sharedInstance().setActive(true)
     }
 
-    func speak(_ text: String, language: String) {
+    func speak(_ text: String, language: String, gender: String = "female") {
         guard !text.isEmpty else { return }
         synthesizer.stopSpeaking(at: .immediate)
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: language)
+        utterance.voice = findVoice(language: language, gender: gender)
         synthesizer.speak(utterance)
+    }
+
+    private func findVoice(language: String, gender: String) -> AVSpeechSynthesisVoice? {
+        let targetGender: AVSpeechSynthesisVoiceGender = gender == "male" ? .male : .female
+        let langPrefix = language.components(separatedBy: "-").first ?? language
+        let allVoices = AVSpeechSynthesisVoice.speechVoices()
+
+        // 1. Exact language + gender match, prefer higher quality
+        let exactMatch = allVoices
+            .filter { $0.language == language && $0.gender == targetGender }
+            .sorted { $0.quality.rawValue > $1.quality.rawValue }
+        if let voice = exactMatch.first { return voice }
+
+        // 2. Same language prefix + gender (e.g. "de" matches "de-DE", "de-AT")
+        let prefixMatch = allVoices
+            .filter { $0.language.hasPrefix(langPrefix) && $0.gender == targetGender }
+            .sorted { $0.quality.rawValue > $1.quality.rawValue }
+        if let voice = prefixMatch.first { return voice }
+
+        // 3. Fall back to default voice for language
+        return AVSpeechSynthesisVoice(language: language)
     }
 
     func stop() {

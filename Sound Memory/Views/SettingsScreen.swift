@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 struct SettingsScreen: View {
     let viewModel: SoundMemoryViewModel
@@ -63,7 +64,7 @@ struct SettingsScreen: View {
                 }
             }
 
-            Section("Speech") {
+            Section {
                 Toggle(isOn: $settings.useOfficialText) {
                     VStack(alignment: .leading) {
                         Text("Speech text")
@@ -72,6 +73,24 @@ struct SettingsScreen: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+
+                Picker("Voice", selection: $settings.voiceGender) {
+                    Text("Female").tag("female")
+                    Text("Male").tag("male")
+                }
+
+                if !isVoiceAvailable(language: settings.language, gender: settings.voiceGender) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Voice not available")
+                            .font(.caption)
+                            .foregroundStyle(.orange)
+                        Text("Download voices in iOS Settings > Accessibility > Spoken Content > Voices")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            } header: {
+                Text("Speech")
             }
 
             if let onShowWalkthrough {
@@ -91,5 +110,12 @@ struct SettingsScreen: View {
                 Button("Done") { dismiss() }
             }
         }
+    }
+
+    private func isVoiceAvailable(language: String, gender: String) -> Bool {
+        let targetGender: AVSpeechSynthesisVoiceGender = gender == "male" ? .male : .female
+        let langPrefix = language.components(separatedBy: "-").first ?? language
+        return AVSpeechSynthesisVoice.speechVoices()
+            .contains { $0.language.hasPrefix(langPrefix) && $0.gender == targetGender }
     }
 }

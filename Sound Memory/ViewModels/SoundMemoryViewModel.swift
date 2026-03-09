@@ -96,7 +96,7 @@ class SoundMemoryViewModel {
         if firstFlippedId == nil {
             if shouldSpeak {
                 speakingCardIds = [cardId]
-                ttsManager.speak(speakText, language: card.language)
+                ttsManager.speak(speakText, language: card.language, gender: settings.voiceGender)
             }
             flippedCardLabels = [cardId: labels.0]
             firstFlippedId = cardId
@@ -106,7 +106,7 @@ class SoundMemoryViewModel {
 
             if shouldSpeak {
                 speakingCardIds = [firstId, cardId]
-                ttsManager.speak(speakText, language: card.language)
+                ttsManager.speak(speakText, language: card.language, gender: settings.voiceGender)
             }
             flippedCardLabels = [firstId: labels.0, cardId: labels.1]
             moves += 1
