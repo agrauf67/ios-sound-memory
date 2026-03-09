@@ -56,7 +56,9 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showSettings) {
             NavigationStack {
-                SettingsScreen(viewModel: viewModel)
+                SettingsScreen(viewModel: viewModel) {
+                    showWalkthrough = true
+                }
             }
             .tint(viewModel.settings.accentColor)
             .preferredColorScheme(viewModel.settings.preferredColorScheme)

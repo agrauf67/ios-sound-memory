@@ -124,7 +124,7 @@ private struct WalkthroughPageView: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
 
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(spacing: 8) {
                     ForEach(tips, id: \.self) { tip in
                         HStack(alignment: .top, spacing: 8) {
                             Image(systemName: "checkmark")
@@ -133,10 +133,11 @@ private struct WalkthroughPageView: View {
                                 .padding(.top, 2)
                             Text(tip)
                                 .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
                         }
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 32)
             }
             .padding(32)

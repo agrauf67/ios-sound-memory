@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsScreen: View {
     let viewModel: SoundMemoryViewModel
+    var onShowWalkthrough: (() -> Void)?
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -69,6 +70,17 @@ struct SettingsScreen: View {
                         Text(settings.useOfficialText ? "Official" : "Colloquial")
                             .font(.caption)
                             .foregroundStyle(.secondary)
+                    }
+                }
+            }
+
+            if let onShowWalkthrough {
+                Section {
+                    Button {
+                        dismiss()
+                        onShowWalkthrough()
+                    } label: {
+                        Label("Show Walkthrough", systemImage: "hand.wave")
                     }
                 }
             }
