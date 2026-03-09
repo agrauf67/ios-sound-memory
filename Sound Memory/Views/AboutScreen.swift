@@ -6,14 +6,7 @@ struct AboutScreen: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 24) {
-                Image("AppIcon")
-                    .resizable()
-                    .frame(width: 72, height: 72)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.secondary.opacity(0.3), lineWidth: 1)
-                    )
+                AppIconView(size: 72)
 
                 VStack(spacing: 4) {
                     Text("Sound Memory")
@@ -95,5 +88,36 @@ private struct LinkButton: View {
             Text(title)
                 .foregroundStyle(.tint)
         }
+    }
+}
+
+private struct AppIconView: View {
+    let size: CGFloat
+
+    var body: some View {
+        Group {
+            if let icon = UIImage(named: "AppIcon") ?? loadAppIcon() {
+                Image(uiImage: icon)
+                    .resizable()
+            } else {
+                Image(systemName: "app.fill")
+                    .resizable()
+                    .foregroundStyle(.tint)
+            }
+        }
+        .frame(width: size, height: size)
+        .clipShape(RoundedRectangle(cornerRadius: size * 0.22))
+        .overlay(
+            RoundedRectangle(cornerRadius: size * 0.22)
+                .stroke(.secondary.opacity(0.3), lineWidth: 1)
+        )
+    }
+
+    private func loadAppIcon() -> UIImage? {
+        guard let icons = Bundle.main.infoDictionary?["CFBundleIcons"] as? [String: Any],
+              let primary = icons["CFBundlePrimaryIcon"] as? [String: Any],
+              let files = primary["CFBundleIconFiles"] as? [String],
+              let name = files.last else { return nil }
+        return UIImage(named: name)
     }
 }
