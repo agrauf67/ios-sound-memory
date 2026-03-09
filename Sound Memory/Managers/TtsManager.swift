@@ -1,7 +1,7 @@
 import AVFoundation
 
-class TtsManager: NSObject, @preconcurrency AVSpeechSynthesizerDelegate {
-    private let synthesizer = AVSpeechSynthesizer()
+class TtsManager: NSObject, AVSpeechSynthesizerDelegate {
+    nonisolated(unsafe) private let synthesizer = AVSpeechSynthesizer()
     var onSpeakingChanged: ((Bool) -> Void)?
 
     override init() {
