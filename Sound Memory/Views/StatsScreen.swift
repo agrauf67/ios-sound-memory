@@ -52,9 +52,13 @@ struct StatsScreen: View {
         return VStack(alignment: .leading, spacing: 8) {
             Text("Last Game")
                 .font(.headline)
-            Text(title)
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            HStack {
+                Text(title)
+                Text("·")
+                Text(result.gameModeName)
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
             StatRow(label: "Moves", value: "\(result.moves)")
             StatRow(label: "Time", value: formatDuration(result.durationSeconds))
             StatRow(label: "Accuracy", value: "\(result.accuracyPercent)%")
@@ -67,56 +71,98 @@ struct StatsScreen: View {
     }
 
     private var leaderboardSection: some View {
-        let gameSetIndices = Array(Set(results.map(\.gameSetIndex))).sorted()
+        let entries = leaderboardEntries
         return VStack(alignment: .leading, spacing: 8) {
             Text("Best Scores Per Game")
                 .font(.headline)
 
-            ForEach(gameSetIndices, id: \.self) { gameSetIndex in
-                let gameSet = viewModel.gameSets[safe: gameSetIndex]
-                let title = gameSet?.title.isEmpty == false ? gameSet!.title : "Game \(gameSetIndex + 1)"
-                let repo = viewModel.gameResultRepository
-                let topResults = repo.topResults(gameSetIndex, limit: 5)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text(title)
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                        Spacer()
-                        if let first = topResults.first {
-                            StarRatingView(stars: first.stars)
-                        }
-                    }
-                    StatRow(label: "Best moves", value: repo.bestMoves(gameSetIndex).map(String.init) ?? "-")
-                    StatRow(label: "Best time", value: repo.bestTime(gameSetIndex).map { formatDuration($0) } ?? "-")
-                    StatRow(label: "Games played", value: "\(repo.resultsForGameSet(gameSetIndex).count)")
-
-                    if topResults.count > 1 {
-                        Divider()
-                        Text("Top \(topResults.count)")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                        ForEach(Array(topResults.enumerated()), id: \.element.id) { i, r in
-                            HStack {
-                                Text("\(i + 1).")
-                                    .fontWeight(.bold)
-                                Text("\(r.moves) moves")
-                                Spacer()
-                                Text(formatDuration(r.durationSeconds))
-                                Text("\(r.accuracyPercent)%")
-                                    .frame(width: 40, alignment: .trailing)
-                                StarRatingView(stars: r.stars, size: 12)
-                            }
-                            .font(.caption)
-                        }
-                    }
-                }
-                .padding(12)
-                .background(Color(.secondarySystemBackground))
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            ForEach(entries, id: \.id) { entry in
+                LeaderboardCard(entry: entry)
             }
         }
+    }
+
+    private var leaderboardEntries: [LeaderboardEntry] {
+        var entries: [LeaderboardEntry] = []
+        let grouped = Dictionary(grouping: results) { "\($0.gameSetIndex)-\($0.gameMode)" }
+        for (_, groupResults) in grouped.sorted(by: { $0.key < $1.key }) {
+            guard let first = groupResults.first else { continue }
+            let gameSet = viewModel.gameSets[safe: first.gameSetIndex]
+            let title = gameSet?.title.isEmpty == false ? gameSet!.title : "Game \(first.gameSetIndex + 1)"
+            let sorted = groupResults.sorted { $0.moves < $1.moves }
+            entries.append(LeaderboardEntry(
+                id: "\(first.gameSetIndex)-\(first.gameMode)",
+                title: title,
+                gameMode: first.gameMode,
+                results: sorted,
+                topResults: Array(sorted.prefix(5))
+            ))
+        }
+        return entries
+    }
+}
+
+private struct LeaderboardEntry {
+    let id: String
+    let title: String
+    let gameMode: Int
+    let results: [GameResult]
+    let topResults: [GameResult]
+
+    var gameModeName: LocalizedStringKey {
+        switch gameMode {
+        case 1: return "Speech only"
+        case 2: return "Image only"
+        case 3: return "Speech + Image"
+        default: return "Speech only"
+        }
+    }
+}
+
+private struct LeaderboardCard: View {
+    let entry: LeaderboardEntry
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text(entry.title)
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                Spacer()
+                if let first = entry.topResults.first {
+                    StarRatingView(stars: first.stars)
+                }
+            }
+            Text(entry.gameModeName)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            StatRow(label: "Best moves", value: entry.topResults.first.map { "\($0.moves)" } ?? "-")
+            StatRow(label: "Best time", value: entry.topResults.first.map { formatDuration($0.durationSeconds) } ?? "-")
+            StatRow(label: "Games played", value: "\(entry.results.count)")
+
+            if entry.topResults.count > 1 {
+                Divider()
+                Text("Top \(entry.topResults.count)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                ForEach(Array(entry.topResults.enumerated()), id: \.element.id) { i, r in
+                    HStack {
+                        Text("\(i + 1).")
+                            .fontWeight(.bold)
+                        Text("\(r.moves) moves")
+                        Spacer()
+                        Text(formatDuration(r.durationSeconds))
+                        Text("\(r.accuracyPercent)%")
+                            .frame(width: 40, alignment: .trailing)
+                        StarRatingView(stars: r.stars, size: 12)
+                    }
+                    .font(.caption)
+                }
+            }
+        }
+        .padding(12)
+        .background(Color(.secondarySystemBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 }
 

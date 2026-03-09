@@ -177,6 +177,7 @@ class SoundMemoryViewModel {
             gameSetIndex: selectedGameIndex,
             gameSetTitle: gameSet.title,
             language: gameSet.language,
+            gameMode: settings.gameMode,
             moves: moves,
             durationSeconds: duration,
             matchCount: matchesFound,

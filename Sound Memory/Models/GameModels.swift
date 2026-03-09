@@ -1,4 +1,4 @@
-import UIKit
+import SwiftUI
 
 nonisolated struct CardInfo: Codable, Sendable {
     let name: String
@@ -46,6 +46,7 @@ struct GameResult: Codable, Identifiable, Sendable {
     let gameSetIndex: Int
     let gameSetTitle: String
     let language: String
+    let gameMode: Int
     let moves: Int
     let durationSeconds: Int
     let matchCount: Int
@@ -60,6 +61,41 @@ struct GameResult: Codable, Identifiable, Sendable {
         if moves <= 12 { return 3 }
         if moves <= 18 { return 2 }
         return 1
+    }
+
+    var gameModeName: LocalizedStringKey {
+        switch gameMode {
+        case 1: return "Speech only"
+        case 2: return "Image only"
+        case 3: return "Speech + Image"
+        default: return "Speech only"
+        }
+    }
+
+    init(gameSetIndex: Int, gameSetTitle: String, language: String, gameMode: Int, moves: Int, durationSeconds: Int, matchCount: Int, totalAttempts: Int, timestamp: Date) {
+        self.gameSetIndex = gameSetIndex
+        self.gameSetTitle = gameSetTitle
+        self.language = language
+        self.gameMode = gameMode
+        self.moves = moves
+        self.durationSeconds = durationSeconds
+        self.matchCount = matchCount
+        self.totalAttempts = totalAttempts
+        self.timestamp = timestamp
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decodeIfPresent(UUID.self, forKey: .id) ?? UUID()
+        gameSetIndex = try container.decode(Int.self, forKey: .gameSetIndex)
+        gameSetTitle = try container.decode(String.self, forKey: .gameSetTitle)
+        language = try container.decode(String.self, forKey: .language)
+        gameMode = try container.decodeIfPresent(Int.self, forKey: .gameMode) ?? 1
+        moves = try container.decode(Int.self, forKey: .moves)
+        durationSeconds = try container.decode(Int.self, forKey: .durationSeconds)
+        matchCount = try container.decode(Int.self, forKey: .matchCount)
+        totalAttempts = try container.decode(Int.self, forKey: .totalAttempts)
+        timestamp = try container.decode(Date.self, forKey: .timestamp)
     }
 }
 
