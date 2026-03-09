@@ -52,6 +52,7 @@ struct ContentView: View {
                 }
             }
         }
+        .id(viewModel.settings.language)
         .tint(viewModel.settings.accentColor)
         .preferredColorScheme(viewModel.settings.preferredColorScheme)
         .environment(\.locale, appLocale)
