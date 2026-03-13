@@ -7,15 +7,16 @@ class StoreManager {
     private(set) var purchaseInProgress = false
     private(set) var productsLoaded = false
     var unlockCredits: Int {
-        didSet { UserDefaults.standard.set(unlockCredits, forKey: "unlockCredits") }
+        didSet { save() }
     }
     var unlockedCategories: Set<Int> {
-        didSet {
-            UserDefaults.standard.set(Array(unlockedCategories), forKey: "unlockedCategories")
-        }
+        didSet { save() }
     }
 
     static let freeCategoryIndex = 0
+
+    private static let creditsKey = "unlockCredits"
+    private static let categoriesKey = "unlockedCategories"
 
     static let productIDs: [String] = [
         "de.djvlk.soundmemory.pack1",
@@ -25,11 +26,52 @@ class StoreManager {
     ]
 
     init() {
+        let cloud = NSUbiquitousKeyValueStore.default
         let ud = UserDefaults.standard
-        unlockCredits = ud.integer(forKey: "unlockCredits")
-        let saved = ud.array(forKey: "unlockedCategories") as? [Int] ?? []
-        unlockedCategories = Set(saved)
+
+        // Prefer iCloud values; fall back to local UserDefaults (migration)
+        let cloudCredits = cloud.object(forKey: Self.creditsKey) as? Int
+        let localCredits = ud.integer(forKey: Self.creditsKey)
+        unlockCredits = cloudCredits ?? localCredits
+
+        let cloudCategories = cloud.object(forKey: Self.categoriesKey) as? [Int]
+        let localCategories = ud.array(forKey: Self.categoriesKey) as? [Int] ?? []
+        unlockedCategories = Set(cloudCategories ?? localCategories)
         unlockedCategories.insert(Self.freeCategoryIndex)
+
+        // Sync initial state to both stores
+        save()
+
+        // Listen for iCloud changes from other devices
+        NotificationCenter.default.addObserver(
+            forName: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
+            object: cloud,
+            queue: .main
+        ) { [weak self] _ in
+            self?.loadFromCloud()
+        }
+        cloud.synchronize()
+    }
+
+    private func save() {
+        let ud = UserDefaults.standard
+        ud.set(unlockCredits, forKey: Self.creditsKey)
+        ud.set(Array(unlockedCategories), forKey: Self.categoriesKey)
+
+        let cloud = NSUbiquitousKeyValueStore.default
+        cloud.set(unlockCredits, forKey: Self.creditsKey)
+        cloud.set(Array(unlockedCategories), forKey: Self.categoriesKey)
+    }
+
+    private func loadFromCloud() {
+        let cloud = NSUbiquitousKeyValueStore.default
+        if let credits = cloud.object(forKey: Self.creditsKey) as? Int {
+            unlockCredits = max(unlockCredits, credits)
+        }
+        if let categories = cloud.object(forKey: Self.categoriesKey) as? [Int] {
+            unlockedCategories.formUnion(categories)
+            unlockedCategories.insert(Self.freeCategoryIndex)
+        }
     }
 
     func loadProducts() async {
