@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var showHowToPlay = false
     @State private var showHelp = false
     @State private var showAbout = false
+    @State private var showStore = false
 
     private var appLocale: Locale {
         let lang = viewModel.settings.language.components(separatedBy: "-").first ?? "en"
@@ -87,6 +88,14 @@ struct ContentView: View {
                 .tint(viewModel.settings.accentColor)
                 .environment(\.locale, appLocale)
         }
+        .sheet(isPresented: $showStore) {
+            NavigationStack {
+                StoreScreen(storeManager: viewModel.storeManager)
+            }
+            .tint(viewModel.settings.accentColor)
+            .preferredColorScheme(viewModel.settings.preferredColorScheme)
+            .environment(\.locale, appLocale)
+        }
         .onAppear {
             if !viewModel.settings.walkthroughCompleted {
                 showWalkthrough = true
@@ -96,6 +105,9 @@ struct ContentView: View {
 
     private var appMenuButton: some View {
         Menu {
+            Button { showStore = true } label: {
+                Label("Store", systemImage: "cart")
+            }
             Button { showSettings = true } label: {
                 Label("Settings", systemImage: "gear")
             }

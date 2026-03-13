@@ -4,6 +4,7 @@ import SwiftUI
 class SoundMemoryViewModel {
     let settings = SettingsManager()
     let gameResultRepository = GameResultRepository()
+    let storeManager = StoreManager()
     let gameSets: [GameSet]
     private let ttsManager = TtsManager()
 
@@ -201,9 +202,11 @@ class SoundMemoryViewModel {
             return []
         }
 
+        let languageCount = 4
         return root.gameSets.enumerated().map { index, json in
             GameSet(
                 index: index,
+                category: index / languageCount,
                 language: json.language,
                 title: json.deckcard.text1,
                 deckImage: json.deckcard.image.isEmpty ? "" : json.deckcard.image,

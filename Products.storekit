@@ -1,0 +1,130 @@
+{
+  "identifier" : "8A3F4B2C-1D5E-4A6B-9C7D-0E8F1A2B3C4D",
+  "nonRenewableSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "F1A2B3C4-0001-4000-A001-000000000001",
+      "localizations" : [
+        {
+          "description" : "Unlock 1 game of your choice",
+          "displayName" : "1 Game",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.djvlk.soundmemory.pack1",
+      "referenceName" : "Pack 1 Game",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "F1A2B3C4-0002-4000-A002-000000000002",
+      "localizations" : [
+        {
+          "description" : "Unlock 2 games of your choice",
+          "displayName" : "2 Games",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.djvlk.soundmemory.pack2",
+      "referenceName" : "Pack 2 Games",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "F1A2B3C4-0003-4000-A003-000000000003",
+      "localizations" : [
+        {
+          "description" : "Unlock 3 games of your choice",
+          "displayName" : "3 Games",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.djvlk.soundmemory.pack3",
+      "referenceName" : "Pack 3 Games",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "F1A2B3C4-0004-4000-A004-000000000004",
+      "localizations" : [
+        {
+          "description" : "Unlock 5 games of your choice",
+          "displayName" : "5 Games",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "de.djvlk.soundmemory.pack5",
+      "referenceName" : "Pack 5 Games",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "",
+    "_failTransactionsEnabled" : false,
+    "_lastVerificationError" : "",
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

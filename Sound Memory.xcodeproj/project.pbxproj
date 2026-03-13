@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		1268DE542F641F5800016A6F /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.storekit; sourceTree = "<group>"; };
 		12A923642F53114D0064094A /* Sound Memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sound Memory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +33,7 @@
 		12A9235B2F53114D0064094A = {
 			isa = PBXGroup;
 			children = (
+				1268DE542F641F5800016A6F /* Products.storekit */,
 				12A923662F53114D0064094A /* Sound Memory */,
 				12A923652F53114D0064094A /* Products */,
 			);

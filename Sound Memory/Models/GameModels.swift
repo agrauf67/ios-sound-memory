@@ -25,6 +25,7 @@ nonisolated struct GameSetsRoot: Codable, Sendable {
 
 struct GameSet: Sendable {
     let index: Int
+    let category: Int
     let language: String
     let title: String
     let deckImage: String
