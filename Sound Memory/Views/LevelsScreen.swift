@@ -6,6 +6,7 @@ struct LevelsScreen: View {
 
     @State private var showStore = false
     @State private var unlockTarget: Int?
+    @State private var previewGameSet: GameSet?
 
     private var filteredGames: [GameSet] {
         viewModel.gameSets.filter { $0.language == viewModel.settings.language }
@@ -16,13 +17,15 @@ struct LevelsScreen: View {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
                 ForEach(filteredGames, id: \.index) { gameSet in
                     let locked = !viewModel.storeManager.isCategoryUnlocked(gameSet.category)
-                    GameSetItemView(gameSet: gameSet, locked: locked) {
+                    GameSetItemView(gameSet: gameSet, locked: locked, onTap: {
                         if locked {
                             unlockTarget = gameSet.category
                         } else {
                             onGameSelected(gameSet.index)
                         }
-                    }
+                    }, onPreview: {
+                        previewGameSet = gameSet
+                    })
                 }
             }
             .padding(8)
@@ -68,6 +71,11 @@ struct LevelsScreen: View {
                 Text("You need credits to unlock this game. Visit the store to buy a game pack.")
             }
         }
+        .sheet(item: $previewGameSet) { gameSet in
+            NavigationStack {
+                CardPreviewGrid(gameSet: gameSet)
+            }
+        }
     }
 }
 
@@ -75,6 +83,7 @@ private struct GameSetItemView: View {
     let gameSet: GameSet
     let locked: Bool
     let onTap: () -> Void
+    let onPreview: () -> Void
 
     @State private var image: UIImage?
 
@@ -106,10 +115,68 @@ private struct GameSetItemView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
         }
         .buttonStyle(.plain)
+        .simultaneousGesture(
+            LongPressGesture(minimumDuration: 0.5).onEnded { _ in
+                onPreview()
+            }
+        )
         .task {
             if !gameSet.deckImage.isEmpty {
                 image = loadGameImage(named: gameSet.deckImage)
             }
+        }
+    }
+}
+
+private struct CardPreviewGrid: View {
+    let gameSet: GameSet
+    @Environment(\.dismiss) private var dismiss
+
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 4)
+
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: columns, spacing: 8) {
+                ForEach(gameSet.cards, id: \.name) { card in
+                    CardPreviewItem(card: card)
+                }
+            }
+            .padding(12)
+        }
+        .navigationTitle(gameSet.title)
+        .presentationDetents([.large])
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Done") { dismiss() }
+            }
+        }
+    }
+}
+
+private struct CardPreviewItem: View {
+    let card: CardInfo
+    @State private var image: UIImage?
+
+    var body: some View {
+        VStack(spacing: 4) {
+            if let image {
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(4/3, contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            } else {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(.tertiarySystemBackground))
+                    .aspectRatio(4/3, contentMode: .fit)
+            }
+
+            Text(card.text1)
+                .font(.caption2)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+        }
+        .task {
+            image = loadGameImage(named: "\(card.name).jpg")
         }
     }
 }

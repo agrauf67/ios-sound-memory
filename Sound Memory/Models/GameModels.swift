@@ -23,7 +23,8 @@ nonisolated struct GameSetsRoot: Codable, Sendable {
     let gameSets: [GameSetJSON]
 }
 
-struct GameSet: Sendable {
+struct GameSet: Identifiable, Sendable {
+    var id: Int { index }
     let index: Int
     let category: Int
     let language: String
