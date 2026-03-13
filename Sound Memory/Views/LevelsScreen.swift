@@ -29,6 +29,11 @@ struct LevelsScreen: View {
                 }
             }
             .padding(8)
+
+            Label("Long press a game to preview its cards", systemImage: "hand.tap")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .padding(.bottom, 8)
         }
         .navigationTitle("Select Game")
         .toolbar {

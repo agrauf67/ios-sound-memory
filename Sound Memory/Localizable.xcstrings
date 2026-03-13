@@ -3714,6 +3714,28 @@
           }
         }
       }
+    },
+    "Long press a game to preview its cards": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lange auf ein Spiel drücken, um die Karten anzuzeigen"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appui long sur un jeu pour prévisualiser ses cartes"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantén pulsado un juego para ver sus cartas"
+          }
+        }
+      }
     }
   },
   "version": "1.1"
