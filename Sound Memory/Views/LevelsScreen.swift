@@ -5,9 +5,10 @@ struct LevelsScreen: View {
     let onGameSelected: (Int) -> Void
 
     @State private var showStore = false
-    @State private var unlockTarget: Int?
-    @State private var confirmUnlockTarget: Int?
+    @State private var unlockTarget: GameSet?
+    @State private var confirmUnlockCategory: Int?
     @State private var previewGameSet: GameSet?
+    @State private var returnToUnlockTarget: GameSet?
 
     private var filteredGames: [GameSet] {
         viewModel.gameSets.filter { $0.language == viewModel.settings.language }
@@ -20,7 +21,7 @@ struct LevelsScreen: View {
                     let locked = !viewModel.storeManager.isCategoryUnlocked(gameSet.category)
                     GameSetItemView(gameSet: gameSet, locked: locked, onTap: {
                         if locked {
-                            unlockTarget = gameSet.category
+                            unlockTarget = gameSet
                         } else {
                             onGameSelected(gameSet.index)
                         }
@@ -57,9 +58,14 @@ struct LevelsScreen: View {
         )) {
             if viewModel.storeManager.unlockCredits > 0 {
                 Button("Use 1 Credit") {
-                    confirmUnlockTarget = unlockTarget
+                    confirmUnlockCategory = unlockTarget?.category
                     unlockTarget = nil
                 }
+            }
+            Button("Preview Cards") {
+                returnToUnlockTarget = unlockTarget
+                previewGameSet = unlockTarget
+                unlockTarget = nil
             }
             Button("Go to Store") {
                 unlockTarget = nil
@@ -76,22 +82,27 @@ struct LevelsScreen: View {
             }
         }
         .alert("Confirm Unlock", isPresented: Binding(
-            get: { confirmUnlockTarget != nil },
-            set: { if !$0 { confirmUnlockTarget = nil } }
+            get: { confirmUnlockCategory != nil },
+            set: { if !$0 { confirmUnlockCategory = nil } }
         )) {
             Button("Unlock", role: .destructive) {
-                if let cat = confirmUnlockTarget {
+                if let cat = confirmUnlockCategory {
                     _ = viewModel.storeManager.unlockCategory(cat)
                 }
-                confirmUnlockTarget = nil
+                confirmUnlockCategory = nil
             }
             Button("Cancel", role: .cancel) {
-                confirmUnlockTarget = nil
+                confirmUnlockCategory = nil
             }
         } message: {
             Text("Are you sure you want to spend 1 credit to unlock this game?")
         }
-        .sheet(item: $previewGameSet) { gameSet in
+        .sheet(item: $previewGameSet, onDismiss: {
+            if let target = returnToUnlockTarget {
+                unlockTarget = target
+                returnToUnlockTarget = nil
+            }
+        }) { gameSet in
             NavigationStack {
                 CardPreviewGrid(gameSet: gameSet)
             }

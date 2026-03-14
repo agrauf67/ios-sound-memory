@@ -2038,6 +2038,28 @@
         }
       }
     },
+    "Preview Cards": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Karten ansehen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ver cartas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aperçu des cartes"
+          }
+        }
+      }
+    },
     "Play": {
       "localizations": {
         "de": {
