@@ -22,6 +22,13 @@ xcodebuild -project "Sound Memory.xcodeproj" -scheme "Sound Memory" -sdk iphones
 
 Note: StoreKit testing requires running from Xcode with `Products.storekit` set in the scheme (Product → Scheme → Edit Scheme → Run → Options → StoreKit Configuration).
 
+## Repository Layout
+
+- `Sound Memory/` — **active** source directory (space in name, matching the Xcode target)
+- `Sound Memory.xcodeproj` — **active** Xcode project
+- `SoundMemory/` and `SoundMemory.xcodeproj` — legacy, unused; do not modify
+- No test targets exist in this project
+
 ## Architecture
 
 MVVM architecture with observable managers. All source files live under `Sound Memory/` using Xcode's file system synchronized groups (new Swift files added to the folder are automatically included in the build).

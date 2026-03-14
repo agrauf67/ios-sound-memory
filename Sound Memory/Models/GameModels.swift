@@ -17,6 +17,7 @@ nonisolated struct GameSetJSON: Codable, Sendable {
     let language: String
     let deckcard: DeckCard
     let cards: [CardInfo]
+    let overviewImageDir: String?
 }
 
 nonisolated struct GameSetsRoot: Codable, Sendable {
@@ -31,6 +32,7 @@ struct GameSet: Identifiable, Sendable {
     let title: String
     let deckImage: String
     let cards: [CardInfo]
+    let overviewImageDir: String?
 }
 
 struct MemoryCard: Identifiable, Sendable {

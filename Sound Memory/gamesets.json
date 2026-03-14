@@ -2,6 +2,7 @@
   "gameSets": [
     {
       "language": "de-DE",
+      "overviewImageDir": "OverviewImages/Colors",
       "deckcard": {
         "name": "Farben-Übersichtskarte.DE",
         "image": "overview_game11_DE.jpg",
@@ -73,6 +74,7 @@
     },
     {
       "language": "en-US",
+      "overviewImageDir": "OverviewImages/Colors",
       "deckcard": {
         "name": "Farben-Übersichtskarte.EN",
         "image": "overview_game12_EN.jpg",
@@ -144,6 +146,7 @@
     },
     {
       "language": "fr-FR",
+      "overviewImageDir": "OverviewImages/Colors",
       "deckcard": {
         "name": "Farben-Übersichtskarte.FR",
         "image": "overview_game13_FR.jpg",
@@ -215,6 +218,7 @@
     },
     {
       "language": "es-ES",
+      "overviewImageDir": "OverviewImages/Colors",
       "deckcard": {
         "name": "Farben-Übersichtskarte.SP",
         "image": "overview_game14_SP.jpg",
@@ -286,6 +290,7 @@
     },
     {
       "language": "de-DE",
+      "overviewImageDir": "OverviewImages/Flags",
       "deckcard": {
         "name": "Flaggen-Übersichtskarte.DE",
         "image": "overview_game21_DE.jpg",
@@ -357,6 +362,7 @@
     },
     {
       "language": "en-US",
+      "overviewImageDir": "OverviewImages/Flags",
       "deckcard": {
         "name": "Flaggen-Übersichtskarte.EN",
         "image": "overview_game22_EN.jpg",
@@ -428,6 +434,7 @@
     },
     {
       "language": "fr-FR",
+      "overviewImageDir": "OverviewImages/Flags",
       "deckcard": {
         "name": "Flaggen-Übersichtskarte.FR",
         "image": "overview_game23_FR.jpg",
@@ -499,6 +506,7 @@
     },
     {
       "language": "es-ES",
+      "overviewImageDir": "OverviewImages/Flags",
       "deckcard": {
         "name": "Flaggen-Übersichtskarte.SP",
         "image": "overview_game24_SP.jpg",
@@ -570,6 +578,7 @@
     },
     {
       "language": "de-DE",
+      "overviewImageDir": "OverviewImages/Clothing",
       "deckcard": {
         "name": "Kleidung-Übersichtskarte.DE",
         "image": "overview_game31_DE.jpg",
@@ -641,6 +650,7 @@
     },
     {
       "language": "en-US",
+      "overviewImageDir": "OverviewImages/Clothing",
       "deckcard": {
         "name": "Kleidung-Übersichtskarte.EN",
         "image": "overview_game32_EN.jpg",
@@ -712,6 +722,7 @@
     },
     {
       "language": "fr-FR",
+      "overviewImageDir": "OverviewImages/Clothing",
       "deckcard": {
         "name": "Kleidung-Übersichtskarte.FR",
         "image": "overview_game33_FR.jpg",
@@ -783,6 +794,7 @@
     },
     {
       "language": "es-ES",
+      "overviewImageDir": "OverviewImages/Clothing",
       "deckcard": {
         "name": "KLEIDUNG-Übersichtskarte.SP",
         "image": "overview_game34_SP.jpg",
@@ -854,6 +866,7 @@
     },
     {
       "language": "de-DE",
+      "overviewImageDir": "OverviewImages/Fruits",
       "deckcard": {
         "name": "",
         "image": "overview_game41_DE.jpg",
@@ -925,10 +938,11 @@
     },
     {
       "language": "en-US",
+      "overviewImageDir": "OverviewImages/Fruits",
       "deckcard": {
         "name": "",
         "image": "overview_game42_EN.jpg",
-        "text1": "FRUIT",
+        "text1": "FRUITS",
         "text2": ""
       },
       "cards": [
@@ -996,10 +1010,11 @@
     },
     {
       "language": "fr-FR",
+      "overviewImageDir": "OverviewImages/Fruits",
       "deckcard": {
         "name": "",
         "image": "overview_game43_FR.jpg",
-        "text1": "FRUIT",
+        "text1": "FRUITS",
         "text2": ""
       },
       "cards": [
@@ -1067,10 +1082,11 @@
     },
     {
       "language": "es-ES",
+      "overviewImageDir": "OverviewImages/Fruits",
       "deckcard": {
         "name": "",
         "image": "overview_game44_SP.jpg",
-        "text1": "FRUTA",
+        "text1": "FRUTAS",
         "text2": ""
       },
       "cards": [

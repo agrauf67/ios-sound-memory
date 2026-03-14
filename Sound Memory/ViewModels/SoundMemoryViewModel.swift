@@ -210,7 +210,8 @@ class SoundMemoryViewModel {
                 language: json.language,
                 title: json.deckcard.text1,
                 deckImage: json.deckcard.image.isEmpty ? "" : json.deckcard.image,
-                cards: json.cards
+                cards: json.cards,
+                overviewImageDir: json.overviewImageDir
             )
         }
     }

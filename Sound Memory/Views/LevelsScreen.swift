@@ -6,6 +6,7 @@ struct LevelsScreen: View {
 
     @State private var showStore = false
     @State private var unlockTarget: Int?
+    @State private var confirmUnlockTarget: Int?
     @State private var previewGameSet: GameSet?
 
     private var filteredGames: [GameSet] {
@@ -30,7 +31,7 @@ struct LevelsScreen: View {
             }
             .padding(8)
 
-            Label("Long press a game to preview its cards", systemImage: "hand.tap")
+            Label("Long press a game to view its cards enlarged", systemImage: "hand.tap")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding(.bottom, 8)
@@ -56,9 +57,7 @@ struct LevelsScreen: View {
         )) {
             if viewModel.storeManager.unlockCredits > 0 {
                 Button("Use 1 Credit") {
-                    if let cat = unlockTarget {
-                        _ = viewModel.storeManager.unlockCategory(cat)
-                    }
+                    confirmUnlockTarget = unlockTarget
                     unlockTarget = nil
                 }
             }
@@ -71,10 +70,26 @@ struct LevelsScreen: View {
             }
         } message: {
             if viewModel.storeManager.unlockCredits > 0 {
-                Text("Use 1 credit to unlock this game? You have \(viewModel.storeManager.unlockCredits) credits.")
+                Text("You have \(viewModel.storeManager.unlockCredits) credits. Use 1 credit to unlock this game?")
             } else {
                 Text("You need credits to unlock this game. Visit the store to buy a game pack.")
             }
+        }
+        .alert("Confirm Unlock", isPresented: Binding(
+            get: { confirmUnlockTarget != nil },
+            set: { if !$0 { confirmUnlockTarget = nil } }
+        )) {
+            Button("Unlock", role: .destructive) {
+                if let cat = confirmUnlockTarget {
+                    _ = viewModel.storeManager.unlockCategory(cat)
+                }
+                confirmUnlockTarget = nil
+            }
+            Button("Cancel", role: .cancel) {
+                confirmUnlockTarget = nil
+            }
+        } message: {
+            Text("Are you sure you want to spend 1 credit to unlock this game?")
         }
         .sheet(item: $previewGameSet) { gameSet in
             NavigationStack {
@@ -143,7 +158,7 @@ private struct CardPreviewGrid: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 8) {
                 ForEach(gameSet.cards, id: \.name) { card in
-                    CardPreviewItem(card: card)
+                    CardPreviewItem(card: card, overviewImageDir: gameSet.overviewImageDir)
                 }
             }
             .padding(12)
@@ -160,6 +175,7 @@ private struct CardPreviewGrid: View {
 
 private struct CardPreviewItem: View {
     let card: CardInfo
+    let overviewImageDir: String?
     @State private var image: UIImage?
 
     var body: some View {
@@ -175,13 +191,22 @@ private struct CardPreviewItem: View {
                     .aspectRatio(4/3, contentMode: .fit)
             }
 
-            Text(card.text1)
-                .font(.caption2)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
+            if overviewImageDir == nil {
+                Text(card.text1)
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+            }
         }
         .task {
-            image = loadGameImage(named: "\(card.name).jpg")
+            if overviewImageDir != nil {
+                // Strip language suffix (e.g. "Blau.DE" -> "Blau") for overview images
+                let baseName = (card.name as NSString).deletingPathExtension
+                image = loadGameImage(named: "\(baseName).jpg")
+            }
+            if image == nil {
+                image = loadGameImage(named: "\(card.name).jpg")
+            }
         }
     }
 }

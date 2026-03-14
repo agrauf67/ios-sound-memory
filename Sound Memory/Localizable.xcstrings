@@ -331,6 +331,28 @@
         }
       }
     },
+    "Are you sure you want to spend 1 credit to unlock this game?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Möchtest du wirklich 1 Credit ausgeben, um dieses Spiel freizuschalten?"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "¿Estás seguro de que quieres gastar 1 crédito para desbloquear este juego?"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Voulez-vous vraiment dépenser 1 crédit pour débloquer ce jeu ?"
+          }
+        }
+      }
+    },
     "About": {
       "localizations": {
         "de": {
@@ -797,6 +819,28 @@
           "stringUnit": {
             "state": "translated",
             "value": "Couleurs"
+          }
+        }
+      }
+    },
+    "Confirm Unlock": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freischaltung bestätigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirmar desbloqueo"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Confirmer le déblocage"
           }
         }
       }
@@ -3178,6 +3222,28 @@
         }
       }
     },
+    "Unlock": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freischalten"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desbloquear"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Débloquer"
+          }
+        }
+      }
+    },
     "Unlock Game": {
       "localizations": {
         "de": {
@@ -3244,24 +3310,24 @@
         }
       }
     },
-    "Use 1 credit to unlock this game? You have %lld credits.": {
+    "You have %lld credits. Use 1 credit to unlock this game?": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "1 Credit verwenden, um dieses Spiel freizuschalten? Du hast %lld Credits."
+            "value": "Du hast %lld Credits. 1 Credit verwenden, um dieses Spiel freizuschalten?"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "¿Usar 1 crédito para desbloquear este juego? Tienes %lld créditos."
+            "value": "Tienes %lld créditos. ¿Usar 1 crédito para desbloquear este juego?"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Utiliser 1 crédit pour débloquer ce jeu ? Vous avez %lld crédits."
+            "value": "Vous avez %lld crédits. Utiliser 1 crédit pour débloquer ce jeu ?"
           }
         }
       }
@@ -3715,24 +3781,24 @@
         }
       }
     },
-    "Long press a game to preview its cards": {
+    "Long press a game to view its cards enlarged": {
       "localizations": {
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Lange auf ein Spiel drücken, um die Karten anzuzeigen"
+            "value": "Lange auf ein Spiel drücken, um die Karten vergrößert anzuzeigen"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Appui long sur un jeu pour prévisualiser ses cartes"
+            "value": "Appui long sur un jeu pour voir ses cartes en grand"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mantén pulsado un juego para ver sus cartas"
+            "value": "Mantén pulsado un juego para ver sus cartas ampliadas"
           }
         }
       }
